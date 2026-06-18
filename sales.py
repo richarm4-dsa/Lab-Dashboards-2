@@ -23,12 +23,15 @@ st.title("E-commerce Sales Dashboard")
 col1, col2 = st.columns(2)
 with col1:
     st.metric("Total Revenue", f"${df['Total'].sum():,.2f}")
-eith col2:
+with col2:
     st.metric("Total Orders", len(df))
 
 # Data Table
-st.subheader("Sales Data")
-st.dataframe(df)
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader("Sales Data")
+with col2:
+    st.dataframe(df)
 
 # Chart
 st.subheader("Sales by Category")
